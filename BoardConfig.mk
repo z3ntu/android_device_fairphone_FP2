@@ -122,3 +122,13 @@ TW_NO_EXFAT_FUSE := true
 
 
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
+
+#MultiROM config. MultiROM also uses parts of TWRP config
+TARGET_RECOVERY_IS_MULTIROM := true
+MR_INPUT_TYPE := type_b
+MR_INIT_DEVICES := device/fairphone_devices/FP2/mr_init_devices.c
+MR_DPI := hdpi
+MR_DPI_FONT := 480
+MR_FSTAB := device/fairphone_devices/FP2/twrp.fstab
+MR_KEXEC_MEM_MIN := 0x85000000
+#MR_INFOS := device/fairphone_devices/FP2/mrom_infos
