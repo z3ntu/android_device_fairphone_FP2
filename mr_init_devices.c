@@ -46,5 +46,7 @@ const char *mr_init_devices[] =
     // USB Drive is in here
     //"/sys/devices/platform/msm_hsusb_host*",
 
+    "/dev/block/platform/msm_sdcc.1/by-name/userdata",
+
     NULL
 };
