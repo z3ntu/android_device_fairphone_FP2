@@ -132,6 +132,7 @@ MR_DPI_FONT := 480
 MR_FSTAB := device/fairphone_devices/FP2/twrp.fstab
 MR_KEXEC_MEM_MIN := 0x85000000
 #MR_INFOS := device/fairphone_devices/FP2/mrom_infos
+MR_USE_MROM_FSTAB := true
 
 include device/fairphone_devices/FP2/MR_REC_VERSION.mk
 
