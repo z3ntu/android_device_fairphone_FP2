@@ -22,10 +22,12 @@ endif
 #----------------------------------------------------------------------
 ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
 ifeq ($(KERNEL_DEFCONFIG),)
+$(info defconfig_normal)
     KERNEL_DEFCONFIG := fairphone_defconfig
 endif
 else
 ifeq ($(KERNEL_DEFCONFIG),)
+$(info defconfig_perf)
     KERNEL_DEFCONFIG := fairphone-perf_defconfig
 endif
 endif

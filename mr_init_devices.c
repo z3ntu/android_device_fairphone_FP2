@@ -48,12 +48,12 @@ const char *mr_init_devices[] =
     //"/sys/devices/platform/power",
 
     // for adb
-    //"/sys/class/tty/ptmx",
-    //"/dev/block/platform/msm_sdcc.1/by-name/system", //system
-    //"/dev/block/platform/msm_sdcc.1/by-name/cache", // /cache
-    //"/sys/class/misc/android_adb",
-    //"/sys/class/android_usb/android0/f_adb",
-    //"/sys/bus/usb",
+    "/sys/class/tty/ptmx",
+    "/dev/block/platform/msm_sdcc.1/by-name/system", //system
+    "/dev/block/platform/msm_sdcc.1/by-name/cache", // /cache
+    "/sys/class/misc/android_adb",
+    "/sys/class/android_usb/android0/f_adb",
+    "/sys/bus/usb",
 
     // Mount persist and firmware
     //"/dev/block/platform/msm_sdcc.1/by-name/persist ", //persist
