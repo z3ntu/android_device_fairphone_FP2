@@ -21,15 +21,15 @@ endif
 # Compile Linux Kernel
 #----------------------------------------------------------------------
 ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
-ifeq ($(KERNEL_DEFCONFIG),)
-$(info defconfig_normal)
+#ifeq ($(KERNEL_DEFCONFIG),)
+    $(info Using normal kernel config file.)
     KERNEL_DEFCONFIG := fairphone_defconfig
-endif
-else
-ifeq ($(KERNEL_DEFCONFIG),)
-$(info defconfig_perf)
-    KERNEL_DEFCONFIG := fairphone-perf_defconfig
-endif
+#endif
+#else
+#ifeq ($(KERNEL_DEFCONFIG),)
+#$(info defconfig_perf)
+#    KERNEL_DEFCONFIG := fairphone-perf_defconfig
+#endif
 endif
 
 include kernel/AndroidKernel.mk
