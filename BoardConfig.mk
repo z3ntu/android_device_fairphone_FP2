@@ -133,7 +133,10 @@ MR_FSTAB := device/fairphone_devices/FP2/twrp.fstab
 MR_KEXEC_MEM_MIN := 0x85000000
 #MR_INFOS := device/fairphone_devices/FP2/mrom_infos
 MR_USE_MROM_FSTAB := true
-MR_PIXEL_FORMAT := RGBX_8888
+MR_PIXEL_FORMAT := "RGBX_8888"
+#MR_USE_QCOM_OVERLAY := true
+#MR_QCOM_OVERLAY_HEADER := "kernel/include/linux/msm_ion.h"
+#MR_QCOM_OVERLAY_HEADER2 := "kernel/include/linux/msm_mdp.h"
 
 include device/fairphone_devices/FP2/MR_REC_VERSION.mk
 
