@@ -404,7 +404,7 @@ system/lib/hw/audio.primary.msm8974.so
 system/lib/hw/keystore.qcom.so
 system/lib/hw/copybit.msm8974.so
 system/lib/libOmxEvrcEnc.so
-system/lib/libOmxAmrEnc.so
+#system/lib/libOmxAmrEnc.so
 system/lib/libOmxVdecHevc.so
 system/lib/libbt-vendor.so
 system/lib/libextendedremotedisplay.so
