@@ -25,5 +25,8 @@ const char *mr_init_devices[] = {
     "/sys/bus*",
     "/sys/devices*",
 
+    // apparently: for qualcomm overlay - /dev/ion
+    "/sys/devices/virtual/misc/ion",
+
     NULL
 };
