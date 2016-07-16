@@ -131,6 +131,7 @@ MR_DPI := xhdpi
 MR_DPI_FONT := 340
 MR_FSTAB := device/fairphone_devices/FP2/twrp.fstab
 MR_KEXEC_MEM_MIN := 0x02200000
+MR_KEXEC_DTB := true
 MR_INFOS := device/fairphone_devices/FP2/multirom/mrom_infos
 MR_USE_MROM_FSTAB := true
 MR_PIXEL_FORMAT := "RGBX_8888"
