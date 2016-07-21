@@ -1,6 +1,6 @@
 Start of a Fairphone CM12 port.
 
-git tree to be checked out as device/fairphone/FP2
+git tree to be checked out as device/fairphone/fp2
 
 Following https://wiki.cyanogenmod.org/w/Doc:_porting_intro until
 "Make the kernel and kernel modules build from source"

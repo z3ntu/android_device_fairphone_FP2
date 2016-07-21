@@ -13,7 +13,7 @@ TARGET_CPU_VARIANT := cortex-a7
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_BOOTLOADER_BOARD_NAME := FP2
+TARGET_BOOTLOADER_BOARD_NAME := fp2
 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_BASE := 0x00000000
@@ -30,7 +30,7 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE := 0x500000
 BOARD_TOMBSTONESIMAGE_PARTITION_SIZE := 0x4600000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/fairphone/FP2/blobs/kernel
+TARGET_PREBUILT_KERNEL := device/fairphone/fp2/blobs/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
