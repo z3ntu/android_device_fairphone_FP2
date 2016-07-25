@@ -8,6 +8,18 @@ Following https://wiki.cyanogenmod.org/w/Doc:_porting_intro until
 At this stage a working recovery can be built (e.g most probably make recoveryimage)
 
 
+# Repo config
+
+`.repo/local_manifests/fp2.xml`
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="Roboe/android_device_fairphone_fp2" path="device/fairphone/fp2" remote="github" revision="cm-12.1" />
+  <project name="Roboe/android_kernel_fairphone_fp2" path="kernel/fairphone/fp2" remote="github" revision="cm-12.1" />
+</manifest>
+```
+
+
 # Device configuration for Fairphone 2
 
 ## Spec Sheet
