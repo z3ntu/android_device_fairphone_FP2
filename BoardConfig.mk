@@ -1,27 +1,29 @@
-USE_CAMERA_STUB := true
-
-# inherit from the proprietary version
--include vendor/fairphone/FP2/BoardConfigVendor.mk
-
-TARGET_ARCH := arm
+# Bootloader
 TARGET_NO_BOOTLOADER := true
+TARGET_BOOTLOADER_BOARD_NAME := fp2
+
+# Platform
 TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
+
+# Architecture
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a7
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_BOOTLOADER_BOARD_NAME := fp2
-
+# Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_SEPARATED_DT := true
+TARGET_PREBUILT_KERNEL := device/fairphone/fp2/blobs/kernel
 
-# fix this up by examining /proc/mtd on a running device
+# Partitions
+## fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01000000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x80000000
@@ -31,8 +33,15 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE := 0x500000
 BOARD_TOMBSTONESIMAGE_PARTITION_SIZE := 0x4600000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/fairphone/fp2/blobs/kernel
-
+# Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 
+# Graphics
 USE_OPENGL_RENDERER := true
+
+# Camera
+USE_CAMERA_STUB := true
+
+
+# inherit from the proprietary version
+-include vendor/fairphone/FP2/BoardConfigVendor.mk
