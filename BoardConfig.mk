@@ -39,6 +39,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Graphics
+BOARD_EGL_CFG := device/fairphone/fp2/egl.cfg
 USE_OPENGL_RENDERER := true
 
 # Camera
