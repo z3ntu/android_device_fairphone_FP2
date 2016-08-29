@@ -1,3 +1,5 @@
+LOCAL_PATH := device/fairphone/fp2
+
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := fp2
@@ -23,7 +25,7 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-TARGET_PREBUILT_KERNEL := device/fairphone/fp2/blobs/kernel
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/blobs/kernel
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
@@ -39,7 +41,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Graphics
-BOARD_EGL_CFG := device/fairphone/fp2/egl.cfg
+BOARD_EGL_CFG := $(LOCAL_PATH)/egl.cfg
 USE_OPENGL_RENDERER := true
 
 # Camera
@@ -47,4 +49,4 @@ USE_CAMERA_STUB := true
 
 
 # inherit from the proprietary version
--include vendor/fairphone/FP2/BoardConfigVendor.mk
+-include vendor/fairphone/fp2/BoardConfigVendor.mk
