@@ -33,14 +33,15 @@ TARGET_KRAIT_BIONIC_PLDSIZE := 64
 TARGET_OTA_ASSERT_DEVICE := FP2,fp2
 
 # Kernel
-TARGET_NO_KERNEL := false
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_KERNEL_SEPARATED_DT := true
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/blobs/kernel
+TARGET_KERNEL_SOURCE := kernel/fairphone/fp2
+TARGET_KERNEL_CONFIG := cyanogenmod_fp2_defconfig
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/blobs/kernel # fallback
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
