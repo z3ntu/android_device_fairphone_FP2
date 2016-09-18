@@ -139,7 +139,7 @@ MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
 MR_USE_QCOM_OVERLAY := true
 MR_QCOM_OVERLAY_HEADER := device/fairphone_devices/FP2/multirom/mr_qcom_overlay.h
 MR_QCOM_OVERLAY_HEAP_ID_MASK := 2
-MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
+MR_NO_KEXEC := 4
 
 include device/fairphone_devices/FP2/multirom/MR_REC_VERSION.mk
 
