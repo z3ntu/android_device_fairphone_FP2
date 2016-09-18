@@ -36,5 +36,5 @@ initrd_path="%r/initrd.img"
 #  - %s - root directory, from root of the root device
 #  - %i - root image, from root of the root device
 #  - %f - fs of the root image
-base_cmdline="%b androidboot.hardware=hammerhead user_debug=31 msm_watchdog_v2.enable=1 selinux=0"
+base_cmdline="%b androidboot.hardware=fp2 user_debug=31 msm_watchdog_v2.enable=1 selinux=0"
 dir_cmdline="data_subdir=%s/data"
