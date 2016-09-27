@@ -29,7 +29,7 @@ dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 
-ro.hdmi.enable=false
+ro.hdmi.enable=true
 persist.speaker.prot.enable=false
 qcom.hw.aac.encoder=true
 #
@@ -124,7 +124,7 @@ audio.offload.buffer.size.kb=32
 av.offload.enable=true
 
 #enable voice path for PCM VoIP by default
-use.voice.path.for.pcm.voip=false
+use.voice.path.for.pcm.voip=true
 
 #hwui properties
 ro.hwui.texture_cache_size=72
@@ -145,6 +145,3 @@ audio.offload.gapless.enabled=false
 #enable dsds
 persist.radio.multisim.config=dsds
 ro.adb.secure=0
-
-#enable OTG support
-persist.sys.isUsbOtgEnabled=true

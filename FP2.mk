@@ -150,8 +150,7 @@ PRODUCT_PACKAGES += \
                     ClockWidget \
                     FairphonePrivacyImpact \
                     FairphoneSetupWizard \
-                    ProgrammableButton \
-                    ProximitySensorTools
+                    ProgrammableButton
 
 PRODUCT_PACKAGES += iFixit
 
