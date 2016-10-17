@@ -115,9 +115,6 @@ TARGET_HW_DISK_ENCRYPTION := false
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/generic/common/bluetooth
 
-# Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
-
 
 # inherit from the proprietary version
 -include vendor/fairphone/fp2/BoardConfigVendor.mk
