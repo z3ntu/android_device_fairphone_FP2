@@ -1,21 +1,19 @@
-Start of a Fairphone CM12 port.
+# Fairphone 2 CM12.1 port
 
-git tree to be checked out as device/fairphone/fp2
+- CyanogenMod porting guide: https://wiki.cyanogenmod.org/w/Doc:_porting_intro
 
-Following https://wiki.cyanogenmod.org/w/Doc:_porting_intro until
-"Make the kernel and kernel modules build from source"
-
-At this stage a working recovery can be built (e.g most probably make recoveryimage)
+- Build guide: https://forum.fairphone.com/t/pencil2-porting-cyanogenmod/20254
+- Development thread: https://forum.fairphone.com/t/fairphone-2-and-cyanogenmod/10399/last
 
 
 # Repo config
 
 `.repo/local_manifests/fp2.xml`
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="Roboe/android_device_fairphone_fp2" path="device/fairphone/fp2" remote="github" revision="cm-12.1" />
-  <project name="Roboe/android_kernel_fairphone_fp2" path="kernel/fairphone/fp2" remote="github" revision="cm-12.1" />
+  <project name="WeAreFairphone/android_device_fairphone_fp2" path="device/fairphone/fp2" remote="github" revision="cm-12.1" />
+  <project name="WeAreFairphone/android_kernel_fairphone_fp2" path="kernel/fairphone/fp2" remote="github" revision="cm-12.1" />
 </manifest>
 ```
 
