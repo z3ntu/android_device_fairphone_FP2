@@ -41,7 +41,7 @@ BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_SOURCE := kernel/fairphone/fp2
 TARGET_KERNEL_CONFIG := cyanogenmod_fp2_defconfig
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/blobs/kernel # fallback
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel # fallback
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm

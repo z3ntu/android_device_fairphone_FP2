@@ -9,7 +9,7 @@ DEVICE_PACKAGE_OVERLAYS += device/fairphone/fp2/overlay
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/fairphone/fp2/blobs/kernel
+	LOCAL_KERNEL := device/fairphone/fp2/prebuilts/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -18,7 +18,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 
-LOCAL_KERNEL_DT := device/fairphone/fp2/blobs/dt.img
+LOCAL_KERNEL_DT := device/fairphone/fp2/prebuilts/dt.img
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL_DT):dt.img
 
