@@ -96,7 +96,7 @@ TARGET_USES_OVERLAY := true
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so # Enables Adreno RS driver
-BOARD_EGL_CFG := $(LOCAL_PATH)/egl.cfg
+BOARD_EGL_CFG := $(LOCAL_PATH)/graphics/egl.cfg
 
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
