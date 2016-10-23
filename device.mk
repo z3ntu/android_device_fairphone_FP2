@@ -20,6 +20,12 @@ PRODUCT_COPY_FILES += device/fairphone/fp2/media/media_profiles_8974.xml:system/
                       device/fairphone/fp2/media/media_codecs_8974.xml:system/etc/media_codecs.xml
 endif #TARGET_ENABLE_QC_AV_ENHANCEMENTS
 
+PRODUCT_PACKAGES += \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libqcompostprocbundle
+
+
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
