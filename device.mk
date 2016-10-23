@@ -7,6 +7,12 @@ $(call inherit-product-if-exists, vendor/fairphone/fp2/fp2-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/fairphone/fp2/overlay
 
+# Audio configuration file
+PRODUCT_COPY_FILES += \
+    device/fairphone/fp2/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    device/fairphone/fp2/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/fairphone/fp2/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/fairphone/fp2/audio/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
 
 $(call inherit-product, build/target/product/full.mk)
 
