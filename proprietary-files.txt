@@ -20,7 +20,6 @@ system/lib/libOmxAacEnc.so
 system/lib/libOmxEvrcEnc.so
 system/lib/libOmxQcelp13Enc.so
 system/lib/libOmxVdecHevc.so
-system/lib/libOmxVdec.so
 system/lib/libP11EncryptorDecryptor.so
 system/lib/libqcomfm_jni.so
 system/lib/libtinyxml2.so
