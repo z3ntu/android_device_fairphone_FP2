@@ -40,6 +40,12 @@ PRODUCT_PACKAGES += \
     battery_monitor \
     battery_shutdown
 
+# Ramdisk configurations
+PRODUCT_COPY_FILES += \
+    device/fairphone/fp2/rootdir/fstab.qcom:root/fstab.qcom \
+    device/fairphone/fp2/rootdir/fstab.qcom:recovery/root/fstab.qcom \
+    device/fairphone/fp2/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc
+
 
 $(call inherit-product, build/target/product/full.mk)
 
