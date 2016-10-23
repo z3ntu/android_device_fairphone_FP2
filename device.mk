@@ -14,6 +14,12 @@ PRODUCT_COPY_FILES += \
     device/fairphone/fp2/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/fairphone/fp2/audio/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
 
+# media_profiles and media_codecs xmls for 8974
+ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
+PRODUCT_COPY_FILES += device/fairphone/fp2/media/media_profiles_8974.xml:system/etc/media_profiles.xml \
+                      device/fairphone/fp2/media/media_codecs_8974.xml:system/etc/media_codecs.xml
+endif #TARGET_ENABLE_QC_AV_ENHANCEMENTS
+
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
