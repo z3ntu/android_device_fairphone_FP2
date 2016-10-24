@@ -74,6 +74,13 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
+# AppOps
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.whitelist=/system/etc/whitelist_appops.xml
+
+PRODUCT_COPY_FILES += \
+    device/fairphone/fp2/appops/whitelist_appops.xml:system/etc/whitelist_appops.xml
+
 
 $(call inherit-product, build/target/product/full.mk)
 
