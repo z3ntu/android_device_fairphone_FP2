@@ -58,6 +58,13 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += wcnss_service
 
+# ANT stack
+PRODUCT_PACKAGES += \
+    AntHalService \
+    libantradio \
+    ANTRadioService \
+    antradio_app
+
 
 $(call inherit-product, build/target/product/full.mk)
 
