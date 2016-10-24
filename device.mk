@@ -46,6 +46,18 @@ PRODUCT_COPY_FILES += \
     device/fairphone/fp2/rootdir/fstab.qcom:recovery/root/fstab.qcom \
     device/fairphone/fp2/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc
 
+# WiFi WCNSS configurations
+PRODUCT_COPY_FILES += \
+    device/fairphone/fp2/wlan/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/fairphone/fp2/wlan/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
+
+# WPA supplicant configurations
+PRODUCT_COPY_FILES += \
+    device/fairphone/fp2/wlan/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    device/fairphone/fp2/wlan/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+
+PRODUCT_PACKAGES += wcnss_service
+
 
 $(call inherit-product, build/target/product/full.mk)
 
