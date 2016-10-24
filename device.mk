@@ -65,6 +65,11 @@ PRODUCT_PACKAGES += \
     ANTRadioService \
     antradio_app
 
+# Enable strict operation
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.strict_op_enable=false \
+    persist.sys.usb.config=mtp
+
 
 $(call inherit-product, build/target/product/full.mk)
 
