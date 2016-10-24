@@ -70,6 +70,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.strict_op_enable=false \
     persist.sys.usb.config=mtp
 
+# Camera
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
+
 
 $(call inherit-product, build/target/product/full.mk)
 
