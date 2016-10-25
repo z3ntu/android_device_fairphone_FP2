@@ -97,6 +97,14 @@ PRODUCT_BOOT_JARS += \
     vcard \
     tcmiface
 
+# QCOM boot
+ifneq ($(strip $(QCPATH)),)
+PRODUCT_BOOT_JARS += WfdCommon # Wifi display
+PRODUCT_BOOT_JARS += qcom.fmradio #  FM Radio
+PRODUCT_BOOT_JARS += security-bridge
+PRODUCT_BOOT_JARS += qsb-port
+PRODUCT_BOOT_JARS += oem-services # QCOM services
+endif
 
 $(call inherit-product, build/target/product/full.mk)
 
