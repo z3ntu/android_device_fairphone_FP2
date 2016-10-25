@@ -92,6 +92,11 @@ EXTENDED_FONT_FOOTPRINT := true
 PRODUCT_BOOT_JARS += \
     org.codeaurora.Performance
 
+# Misc
+PRODUCT_BOOT_JARS += \
+    vcard \
+    tcmiface
+
 
 $(call inherit-product, build/target/product/full.mk)
 
