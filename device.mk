@@ -81,6 +81,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     device/fairphone/fp2/appops/whitelist_appops.xml:system/etc/whitelist_appops.xml
 
+# Media (OpenMAX)
+PRODUCT_BOOT_JARS += \
+    qcmediaplayer
+
 
 $(call inherit-product, build/target/product/full.mk)
 
