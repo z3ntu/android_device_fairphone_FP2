@@ -85,6 +85,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BOOT_JARS += \
     qcmediaplayer
 
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
+
 
 $(call inherit-product, build/target/product/full.mk)
 
