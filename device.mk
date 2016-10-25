@@ -88,6 +88,10 @@ PRODUCT_BOOT_JARS += \
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
+# QCOM Performance
+PRODUCT_BOOT_JARS += \
+    org.codeaurora.Performance
+
 
 $(call inherit-product, build/target/product/full.mk)
 
