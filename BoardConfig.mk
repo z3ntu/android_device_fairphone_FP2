@@ -31,8 +31,10 @@ TARGET_NO_BOOTLOADER := false
 TARGET_BOOTLOADER_BOARD_NAME := fp2
 
 # Platform
+BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
+TARGET_USES_QCOM_BSP := true
 
 # Architecture
 TARGET_ARCH := arm
@@ -90,6 +92,9 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 # Audio
 BOARD_USES_GENERIC_AUDIO := true
 
+# Media
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+
 # Graphics
 USE_OPENGL_RENDERER := true
 TARGET_HARDWARE_3D := false
@@ -137,6 +142,9 @@ TARGET_HW_DISK_ENCRYPTION := false
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/generic/common/bluetooth
+
+# NFC
+TARGET_USES_QCA_NFC := other
 
 
 # inherit from the proprietary version
