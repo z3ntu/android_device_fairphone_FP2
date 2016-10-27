@@ -45,7 +45,7 @@ PRODUCT_COPY_FILES += \
     device/fairphone/fp2/rootdir/fstab.qcom:root/fstab.qcom \
     device/fairphone/fp2/rootdir/fstab.qcom:recovery/root/fstab.qcom \
     device/fairphone/fp2/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc \
-    device/fairphone/fp2/init.recovery.usb.rc:recovery/root/init.recovery.usb.rc
+    device/fairphone/fp2/rootdir/init.recovery.usb.rc:recovery/root/init.recovery.usb.rc
 
 # WiFi WCNSS configurations
 PRODUCT_COPY_FILES += \
