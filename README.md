@@ -14,6 +14,10 @@
 <manifest>
   <project name="WeAreFairphone/android_device_fairphone_fp2" path="device/fairphone/fp2" remote="github" revision="cm-12.1" />
   <project name="WeAreFairphone/android_kernel_fairphone_fp2" path="kernel/fairphone/fp2" remote="github" revision="cm-12.1" />
+  
+  <!-- Dependencies -->
+  <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" revision="cm-12.1" />
+  <project name="CyanogenMod/android_hardware_qcom_fm" path="hardware/qcom/fm" remote="github" revision="cm-12.1" />
 </manifest>
 ```
 
