@@ -5,6 +5,12 @@
 - Build guide: https://forum.fairphone.com/t/pencil2-porting-cyanogenmod/20254
 - Development thread: https://forum.fairphone.com/t/fairphone-2-and-cyanogenmod/10399/last
 
+# Continous Integration
+
+- Jenkins instance: https://fpbuild.joutubes.nl/jenkins/
+- Latest build results: https://fpbuild.joutubes.nl/
+
+Thank you so much @snevas for your generosity!
 
 # Repo config
 
