@@ -10,7 +10,7 @@
 - Jenkins instance: https://fpbuild.joutubes.nl/jenkins/
 - Latest build results: https://fpbuild.joutubes.nl/
 
-Thank you so much @snevas for your generosity!
+Thank you so much [@snevas](https://github.com/snevas) for your generosity!
 
 # Repo config
 
