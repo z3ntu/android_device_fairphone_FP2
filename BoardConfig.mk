@@ -3,10 +3,13 @@
 # Product-specific compile-time definitions.
 #
 
+LOCAL_PATH := device/fairphone/FP2
+
 ifeq ($(TARGET_ARCH),)
 TARGET_ARCH := arm
 endif
 TARGET_KERNEL_ARCH := arm
+TARGET_KERNEL_SOURCE := kernel
 BOARD_USES_GENERIC_AUDIO := true
 USE_CAMERA_STUB := false
 
@@ -70,9 +73,9 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user
 else
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 endif
-BOARD_KERNEL_SEPARATED_DT := true
+#BOARD_KERNEL_SEPARATED_DT := true
 
-BOARD_EGL_CFG := device/fairphone/FP2/egl.cfg
+BOARD_EGL_CFG := $(LOCAL_PATH)/egl.cfg
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01000000
@@ -83,6 +86,10 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE := 5242880
 BOARD_TOMBSTONESIMAGE_PARTITION_SIZE := 73400320
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
+# See https://github.com/sonyxperiadev/mkqcdtbootimg
+#BOARD_CUSTOM_MKBOOTIMG := mkqcdtbootimg
+#BOARD_MKBOOTIMG_ARGS += --dt_dir kernel/arch/arm/boot/dts
+TARGET_KERNEL_APPEND_DTB := true
 
 # Add NON-HLOS files for ota upgrade
 ADD_RADIO_FILES ?= true

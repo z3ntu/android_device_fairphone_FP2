@@ -11,13 +11,13 @@ endif #TARGET_USES_QCOM_BSP
 
 # media_profiles and media_codecs xmls for 8974
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
-PRODUCT_COPY_FILES += device/fairphone/FP2/media/media_profiles_8974.xml:system/etc/media_profiles.xml \
-                      device/fairphone/FP2/media/media_codecs_8974.xml:system/etc/media_codecs.xml
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/media/media_profiles_8974.xml:system/etc/media_profiles.xml \
+                      $(LOCAL_PATH)/media/media_codecs_8974.xml:system/etc/media_codecs.xml
 endif  #TARGET_ENABLE_QC_AV_ENHANCEMENTS
 
 ifeq ($(PROPRIETARY_BLOBS_EXIST),true)
 PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/apns-conf.xml:system/etc/apns-conf.xml
+    $(LOCAL_PATH)/apns-conf.xml:system/etc/apns-conf.xml
 endif
 
 $(call inherit-product, device/qcom/common/common.mk)
@@ -31,14 +31,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/audio_policy.conf:system/etc/audio_policy.conf \
-    device/fairphone/FP2/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/fairphone/FP2/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/fairphone/FP2/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
+    $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
 
 # Display logo image file
 PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/splash.img:$(PRODUCT_OUT)/splash.img
+    $(LOCAL_PATH)/splash.img:$(PRODUCT_OUT)/splash.img
 
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
@@ -65,8 +65,8 @@ PRODUCT_PACKAGES += fstab.qcom
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/fairphone/FP2/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
+    $(LOCAL_PATH)/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
@@ -93,7 +93,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
 PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/whitelist_appops.xml:system/etc/whitelist_appops.xml
+    $(LOCAL_PATH)/whitelist_appops.xml:system/etc/whitelist_appops.xml
 
 
 # NFC packages
@@ -160,13 +160,13 @@ PRODUCT_PACKAGES += iFixit
 PRODUCT_PACKAGES += Amaze
 
 # Add boot animation
-PRODUCT_COPY_FILES += device/fairphone/FP2/bootanimation.zip:system/media/bootanimation.zip
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/bootanimation.zip:system/media/bootanimation.zip
 
 # Set default ringtone to Fairphone's
-PRODUCT_COPY_FILES += device/fairphone/FP2/Sunbeam.mp3:system/media/audio/ringtones/Fairphone.mp3
-PRODUCT_COPY_FILES += device/fairphone/FP2/Fiesta.mp3:system/media/audio/ringtones/Fiesta.mp3
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/Sunbeam.mp3:system/media/audio/ringtones/Fairphone.mp3
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/Fiesta.mp3:system/media/audio/ringtones/Fiesta.mp3
 
-PRODUCT_COPY_FILES += device/fairphone/FP2/twrp.fstab:recovery/root/etc/twrp.fstab
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
 
 PRODUCT_MODEL := FP2
 
@@ -175,7 +175,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # Preferred Applications for Fairphone
 PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/preferred.xml:system/etc/preferred-apps/fp.xml
+    $(LOCAL_PATH)/preferred.xml:system/etc/preferred-apps/fp.xml
 
 # remove /dev/diag in user version for CTS
 ifeq ($(TARGET_BUILD_VARIANT),user)
@@ -186,7 +186,7 @@ ifeq ($(strip $(FP2_SKIP_BOOT_JARS_CHECK)),)
 SKIP_BOOT_JARS_CHECK := true
 endif
 
-DEVICE_PACKAGE_OVERLAYS += device/fairphone/FP2/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # SuperUser
 FP2_USE_APPOPS_SU := true
