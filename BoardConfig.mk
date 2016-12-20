@@ -73,7 +73,7 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user
 else
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 endif
-#BOARD_KERNEL_SEPARATED_DT := true
+BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_EGL_CFG := $(LOCAL_PATH)/egl.cfg
 
@@ -90,6 +90,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 #BOARD_CUSTOM_MKBOOTIMG := mkqcdtbootimg
 #BOARD_MKBOOTIMG_ARGS += --dt_dir kernel/arch/arm/boot/dts
 TARGET_KERNEL_APPEND_DTB := true
+
 
 # Add NON-HLOS files for ota upgrade
 ADD_RADIO_FILES ?= true
@@ -129,3 +130,5 @@ TW_NO_EXFAT_FUSE := true
 
 
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
+
+#TARGET_PREBUILD_KERNEL := $(LOCAL_PATH)/prebuilts/kernel

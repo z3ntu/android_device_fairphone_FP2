@@ -144,7 +144,13 @@ audio.offload.gapless.enabled=false
 
 #enable dsds
 persist.radio.multisim.config=dsds
-ro.adb.secure=1
+ro.adb.secure=0
 
 #enable OTG support
 persist.sys.isUsbOtgEnabled=true
+
+# Enable software keys
+qemu.hw.mainkeys=0
+
+# Set DPI (446 is the ppi according to wikipedia)
+ro.sf.lcd_density=446

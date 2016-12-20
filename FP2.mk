@@ -36,10 +36,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml \
     $(LOCAL_PATH)/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
 
-# Display logo image file
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/splash.img:$(PRODUCT_OUT)/splash.img
-
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -158,9 +154,6 @@ PRODUCT_PACKAGES += iFixit
 
 # Amaze File Manager
 PRODUCT_PACKAGES += Amaze
-
-# Add boot animation
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/bootanimation.zip:system/media/bootanimation.zip
 
 # Set default ringtone to Fairphone's
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/Sunbeam.mp3:system/media/audio/ringtones/Fairphone.mp3
