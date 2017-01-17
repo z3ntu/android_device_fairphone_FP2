@@ -22,10 +22,11 @@ endif
 
 $(call inherit-product, device/qcom/common/common.mk)
 
-PRODUCT_NAME := FP2
-PRODUCT_DEVICE := FP2
+PRODUCT_NAME := aosp_fp2
+PRODUCT_DEVICE := fp2
 PRODUCT_BRAND := Fairphone
 PRODUCT_MANUFACTURER := Fairphone
+PRODUCT_MODEL := Fairphone 2
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-fairphone
 
@@ -160,8 +161,6 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/Sunbeam.mp3:system/media/audio/ringtones/Fai
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/Fiesta.mp3:system/media/audio/ringtones/Fiesta.mp3
 
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
-
-PRODUCT_MODEL := FP2
 
 # include an expanded selection of fonts for the SDK.
 EXTENDED_FONT_FOOTPRINT := true

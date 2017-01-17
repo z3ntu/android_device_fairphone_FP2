@@ -3,13 +3,14 @@
 # Product-specific compile-time definitions.
 #
 
-LOCAL_PATH := device/fairphone/FP2
+LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_ARCH),)
 TARGET_ARCH := arm
 endif
 TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_SOURCE := kernel
+TARGET_KERNEL_SOURCE := kernel/fairphone/fp2
+TARGET_KERNEL_CONFIG := fairphone_defconfig
 BOARD_USES_GENERIC_AUDIO := true
 USE_CAMERA_STUB := false
 
@@ -131,4 +132,4 @@ TW_NO_EXFAT_FUSE := true
 
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
-#TARGET_PREBUILD_KERNEL := $(LOCAL_PATH)/prebuilts/kernel
+#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel

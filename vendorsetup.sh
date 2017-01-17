@@ -1,3 +1,3 @@
-add_lunch_combo FP2-user
-add_lunch_combo FP2-userdebug
-add_lunch_combo FP2-eng
+add_lunch_combo aosp_fp2-user
+add_lunch_combo aosp_fp2-userdebug
+add_lunch_combo aosp_fp2-eng

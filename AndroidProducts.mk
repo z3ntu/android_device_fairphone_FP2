@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/FP2.mk
+	$(LOCAL_DIR)/aosp_fp2.mk
