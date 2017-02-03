@@ -70,7 +70,7 @@ TARGET_KERNEL_CONFIG := cyanogenmod_fp2_defconfig
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel # fallback
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_INIT_VENDOR_LIB := libinit_fp2
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
