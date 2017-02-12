@@ -132,10 +132,10 @@ void setOwners(char *path, int owner, int group)
 
 void init_alarm_boot_properties()
 {
-    std::string alarm_file = "/proc/sys/kernel/boot_reason";
+    char *alarm_file = "/proc/sys/kernel/boot_reason";
     char buf[BUF_SIZE];
 
-    if(read_file2(alarm_file.c_str(), buf, sizeof(buf))) {
+    if(read_file2(alarm_file, buf, sizeof(buf))) {
 
     /*
      * Setup ro.alarm_boot value to true when it is RTC triggered boot up
@@ -209,11 +209,12 @@ void set_display_node_perms()
 
 static int check_rlim_action()
 {
-    std::string pval;
+    char pval[PROP_VALUE_MAX];
+    int rc;
     struct rlimit rl;
-    pval = property_get("persist.debug.trace");
+    rc = property_get("persist.debug.trace",pval);
 
-    if(pval == "1") {
+    if(rc && (strcmp(pval,"1") == 0)) {
         rl.rlim_cur = RLIM_INFINITY;
         rl.rlim_max = RLIM_INFINITY;
         if (setrlimit(RLIMIT_CORE, &rl) < 0) {

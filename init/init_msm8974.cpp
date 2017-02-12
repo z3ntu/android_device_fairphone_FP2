@@ -38,14 +38,15 @@
 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
-    std::string platform;
-    std::string baseband;
+    char platform[PROP_VALUE_MAX];
+    char baseband[PROP_VALUE_MAX];
+    int rc;
 
     UNUSED(msm_id);
     UNUSED(msm_ver);
 
-    platform = property_get("ro.board.platform");
-    if (platform != ANDROID_TARGET)
+    rc = property_get("ro.board.platform", platform);
+    if (!rc || !ISMATCH(platform, ANDROID_TARGET))
         return;
 
     property_set(PROP_LCDDENSITY, "480");
@@ -63,8 +64,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set(PROP_LCDDENSITY, "320");
     }
 
-    baseband = property_get(PROP_BOOT_BASEBAND);
-    if (baseband == "apq") {
+    rc = property_get(PROP_BOOT_BASEBAND, baseband);
+    if ((rc != NULL) && ISMATCH(baseband, "apq")) {
         property_set(PROP_BLUETOOTH_SOC, "ath3k");
     }
 }
