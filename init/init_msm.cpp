@@ -27,6 +27,7 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <errno.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <sys/types.h>
@@ -131,10 +132,10 @@ void setOwners(char *path, int owner, int group)
 
 void init_alarm_boot_properties()
 {
-    char *alarm_file = "/proc/sys/kernel/boot_reason";
+    std::string alarm_file = "/proc/sys/kernel/boot_reason";
     char buf[BUF_SIZE];
 
-    if(read_file2(alarm_file, buf, sizeof(buf))) {
+    if(read_file2(alarm_file.c_str(), buf, sizeof(buf))) {
 
     /*
      * Setup ro.alarm_boot value to true when it is RTC triggered boot up
@@ -208,12 +209,11 @@ void set_display_node_perms()
 
 static int check_rlim_action()
 {
-    char pval[PROP_VALUE_MAX];
-    int rc;
+    std::string pval;
     struct rlimit rl;
-    rc = property_get("persist.debug.trace",pval);
+    pval = property_get("persist.debug.trace");
 
-    if(rc && (strcmp(pval,"1") == 0)) {
+    if(pval == "1") {
         rl.rlim_cur = RLIM_INFINITY;
         rl.rlim_max = RLIM_INFINITY;
         if (setrlimit(RLIMIT_CORE, &rl) < 0) {

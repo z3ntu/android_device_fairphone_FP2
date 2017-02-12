@@ -66,8 +66,8 @@ BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_SOURCE := kernel/fairphone/fp2
-TARGET_KERNEL_CONFIG := cyanogenmod_fp2_defconfig
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel # fallback
+TARGET_KERNEL_CONFIG := lineageos_fp2_defconfig
+#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel # fallback
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_fp2
@@ -147,6 +147,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/generic/common/bluetooth
 # NFC
 TARGET_USES_QCA_NFC := other
 
+# WiFi
+WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
 -include vendor/fairphone/fp2/BoardConfigVendor.mk
