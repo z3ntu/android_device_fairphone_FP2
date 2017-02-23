@@ -111,5 +111,12 @@ $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
+# Set adb.secure to 0
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.adb.secure=0 # not working apparently
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.adb.secure=0
+
 PRODUCT_NAME := full_fp2
 PRODUCT_DEVICE := fp2
