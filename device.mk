@@ -42,7 +42,7 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk configurations
 PRODUCT_COPY_FILES += \
-    device/fairphone/fp2/rootdir/fstab.qcom:root/fstab.qcom \
+    device/fairphone/fp2/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab \
     device/fairphone/fp2/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc \
     device/fairphone/fp2/rootdir/init.recovery.usb.rc:root/init.recovery.usb.rc
 
