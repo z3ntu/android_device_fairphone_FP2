@@ -31,7 +31,7 @@ TARGET_NO_BOOTLOADER := false
 TARGET_BOOTLOADER_BOARD_NAME := fp2
 
 # Platform
-BOARD_USES_QCOM_HARDWARE := true
+#BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msm8974
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
 TARGET_USES_QCOM_BSP := true
@@ -57,6 +57,7 @@ TARGET_KRAIT_BIONIC_PLDSIZE := 64
 TARGET_OTA_ASSERT_DEVICE := FP2,fp2
 
 # Kernel
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -65,8 +66,13 @@ BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_SOURCE := kernel/fairphone/fp2
-TARGET_KERNEL_CONFIG := lineageos_fp2_defconfig
+TARGET_KERNEL_CONFIG := fairphone_defconfig
 #TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel # fallback
+
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-linux-androideabi-4.9/bin
+ARM_EABI_TOOLCHAIN:= $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-linux-androideabi-4.9/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-linux-androideabi-
+
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_fp2
