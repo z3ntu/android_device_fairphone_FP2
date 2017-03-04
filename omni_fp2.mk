@@ -11,5 +11,5 @@ $(call inherit-product, device/fairphone/fp2/device.mk)
 PRODUCT_DEVICE := fp2
 PRODUCT_NAME := omni_fp2
 PRODUCT_BRAND := Fairphone
-PRODUCT_MODEL := FP2
+PRODUCT_MODEL := Fairphone 2
 PRODUCT_MANUFACTURER := Fairphone

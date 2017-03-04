@@ -78,6 +78,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.whitelist=/system/etc/whitelist_appops.xml
 
+
+# Fix Fairphone OTA zips (fp2->FP2)
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.product.device=FP2
+
+
 PRODUCT_COPY_FILES += \
     device/fairphone/fp2/appops/whitelist_appops.xml:system/etc/whitelist_appops.xml
 
@@ -110,6 +116,3 @@ endif
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
-PRODUCT_NAME := full_fp2
-PRODUCT_DEVICE := fp2
