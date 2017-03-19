@@ -68,8 +68,8 @@ PRODUCT_PACKAGES += \
 
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.strict_op_enable=false \
-    persist.sys.usb.config=mtp
+    persist.sys.strict_op_enable=false # \
+#    persist.sys.usb.config=mtp
 
 # Camera
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -113,9 +113,6 @@ $(call inherit-product, build/target/product/full.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # Set adb.secure to 0
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.adb.secure=0 # not working apparently
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0
 

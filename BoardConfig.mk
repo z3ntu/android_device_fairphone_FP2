@@ -103,7 +103,6 @@ TARGET_USES_OVERLAY := true
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so # Enables Adreno RS driver
-BOARD_EGL_CFG := $(LOCAL_PATH)/graphics/egl.cfg
 
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -130,9 +129,6 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 ADD_RADIO_FILES ?= true # Add NON-HLOS files for ota upgrade
-
-# CNE
-TARGET_LDPRELOAD := libNimsWrap.so
 
 # Protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
