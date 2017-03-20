@@ -7,6 +7,10 @@ $(call inherit-product-if-exists, vendor/fairphone/fp2/fp2-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/fairphone/fp2/overlay
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
+
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     device/fairphone/fp2/audio/audio_policy.conf:system/etc/audio_policy.conf \
