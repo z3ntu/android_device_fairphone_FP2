@@ -39,11 +39,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml
 
-# Battery_monitor
-PRODUCT_PACKAGES += \
-    battery_monitor \
-    battery_shutdown
-
 # Ramdisk configurations
 PRODUCT_COPY_FILES += \
     device/fairphone/fp2/rootdir/fstab.qcom:root/fstab.qcom \
@@ -64,11 +59,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += wcnss_service
 
 # ANT stack
-PRODUCT_PACKAGES += \
-    AntHalService \
-    libantradio \
-    ANTRadioService \
-    antradio_app
+#PRODUCT_PACKAGES += \
+#    AntHalService \
+#    libantradio \
+#    ANTRadioService \
+#    antradio_app
 
 # Display
 PRODUCT_PACKAGES += \
@@ -110,7 +105,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8974 \
+    camera.msm8974
 
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
