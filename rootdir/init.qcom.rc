@@ -293,6 +293,6 @@ service TCMDServer /system/bin/TCMDServer
     group root
     user root
 
-service logcat /system/bin/logcat -f /dev/kmsg
-    class late_start
-    oneshot
+#service logcat /system/bin/logcat -f /dev/kmsg
+#    class late_start
+#    oneshot

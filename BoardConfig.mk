@@ -57,17 +57,17 @@ TARGET_KRAIT_BIONIC_PLDSIZE := 64
 TARGET_OTA_ASSERT_DEVICE := FP2,fp2
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET := 0x02000000
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_SEPARATED_DT := true
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+BOARD_DTBTOOL_ARGS := -2
 TARGET_KERNEL_SOURCE := kernel/fairphone/fp2
 TARGET_KERNEL_CONFIG := lineageos_fp2_defconfig
-#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel # fallback
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_fp2
@@ -148,6 +148,12 @@ TARGET_USES_QCA_NFC := other
 
 # WiFi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+# SELinux
+#include device/qcom/sepolicy/sepolicy.mk
+
+#BOARD_SEPOLICY_DIRS += \
+#    $(PLATFORM_PATH)/sepolicy
 
 # inherit from the proprietary version
 -include vendor/fairphone/fp2/BoardConfigVendor.mk

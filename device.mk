@@ -108,6 +108,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm8974 \
+
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.strict_op_enable=false # \
