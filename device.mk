@@ -1,15 +1,16 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
+$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
-# The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
-
-$(call inherit-product-if-exists, vendor/fairphone/fp2/fp2-vendor.mk)
-
-DEVICE_PACKAGE_OVERLAYS += device/fairphone/fp2/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
+
+# Display
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
@@ -56,7 +57,8 @@ PRODUCT_COPY_FILES += \
     device/fairphone/fp2/wlan/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     device/fairphone/fp2/wlan/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
-PRODUCT_PACKAGES += wcnss_service
+PRODUCT_PACKAGES += \
+    wcnss_service
 
 # ANT stack
 #PRODUCT_PACKAGES += \
@@ -108,54 +110,42 @@ PRODUCT_PACKAGES += \
     camera.msm8974
 
 # Enable strict operation
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.strict_op_enable=false # \
+#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+#    persist.sys.strict_op_enable=false # \
 #    persist.sys.usb.config=mtp
 
 # Camera
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
-
-# AppOps
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.whitelist=/system/etc/whitelist_appops.xml
-
-PRODUCT_COPY_FILES += \
-    device/fairphone/fp2/appops/whitelist_appops.xml:system/etc/whitelist_appops.xml
+#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+#    camera2.portability.force_api=1
 
 # Media (OpenMAX)
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
+#PRODUCT_BOOT_JARS += \
+#    qcmediaplayer
 
 # Fonts
-EXTENDED_FONT_FOOTPRINT := true
+#EXTENDED_FONT_FOOTPRINT := true
 
 # QCOM Performance
-PRODUCT_BOOT_JARS += \
-    org.codeaurora.Performance
+#PRODUCT_BOOT_JARS += \
+#    org.codeaurora.Performance
 
 # Misc
-PRODUCT_BOOT_JARS += \
-    vcard \
-    tcmiface
+#PRODUCT_BOOT_JARS += \
+#    vcard \
+#    tcmiface
 
 # QCOM boot
-ifneq ($(strip $(QCPATH)),)
-PRODUCT_BOOT_JARS += WfdCommon # Wifi display
-PRODUCT_BOOT_JARS += qcom.fmradio #  FM Radio
-PRODUCT_BOOT_JARS += security-bridge
-PRODUCT_BOOT_JARS += qsb-port
-PRODUCT_BOOT_JARS += oem-services # QCOM services
-endif
+#ifneq ($(strip $(QCPATH)),)
+#PRODUCT_BOOT_JARS += WfdCommon # Wifi display
+#PRODUCT_BOOT_JARS += qcom.fmradio #  FM Radio
+#PRODUCT_BOOT_JARS += security-bridge
+#PRODUCT_BOOT_JARS += qsb-port
+#PRODUCT_BOOT_JARS += oem-services # QCOM services
+#endif
 
 
-$(call inherit-product, build/target/product/full.mk)
-
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+#PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # Set adb.secure to 0
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.adb.secure=0
-
-PRODUCT_NAME := full_fp2
-PRODUCT_DEVICE := fp2
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.adb.secure=0
