@@ -1,33 +1,3 @@
-# Fairphone 2 CM12.1 port
-
-- CyanogenMod porting guide: https://wiki.cyanogenmod.org/w/Doc:_porting_intro
-
-- Build guide: https://forum.fairphone.com/t/pencil2-porting-cyanogenmod/20254
-- Development thread: https://forum.fairphone.com/t/fairphone-2-and-cyanogenmod/10399/last
-
-# Continous Integration
-
-- Jenkins instance: https://fpbuild.joutubes.nl/jenkins/
-- Latest build results: https://fpbuild.joutubes.nl/
-
-Thank you so much [@snevas](https://github.com/snevas) for your generosity!
-
-# Repo config
-
-`.repo/local_manifests/fp2.xml`
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-  <project name="WeAreFairphone/android_device_fairphone_fp2" path="device/fairphone/fp2" remote="github" revision="cm-12.1" />
-  <project name="WeAreFairphone/android_kernel_fairphone_fp2" path="kernel/fairphone/fp2" remote="github" revision="cm-12.1" />
-  
-  <!-- Dependencies -->
-  <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" revision="cm-12.1" />
-  <project name="CyanogenMod/android_hardware_qcom_fm" path="hardware/qcom/fm" remote="github" revision="cm-12.1" />
-</manifest>
-```
-
-
 # Device configuration for Fairphone 2
 
 ## Spec Sheet
