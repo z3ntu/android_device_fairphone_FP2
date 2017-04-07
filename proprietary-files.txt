@@ -44,6 +44,7 @@ etc/firmware/leia_pm4_470.fw
 #more
 
 # Encryption
+vendor/lib/libQSEEComAPI.so
 #bin/qseecomd
 
 #bin/mm-pp-daemon
