@@ -52,19 +52,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml
 
-# WiFi WCNSS configurations
-PRODUCT_COPY_FILES += \
-    device/fairphone/fp2/wlan/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/fairphone/fp2/wlan/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
-
-# WPA supplicant configurations
-PRODUCT_COPY_FILES += \
-    device/fairphone/fp2/wlan/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    device/fairphone/fp2/wlan/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
-
-PRODUCT_PACKAGES += \
-    wcnss_service
-
 # ANT stack
 #PRODUCT_PACKAGES += \
 #    AntHalService \
@@ -139,6 +126,27 @@ PRODUCT_PACKAGES += \
 #    vcard \
 #    tcmiface
 
+# WiFi
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+
+PRODUCT_PACKAGES += \
+    dhcpcd.conf \
+    libwpa_client \
+    hostapd \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    wpa_supplicant_overlay.conf \
+    p2p_supplicant_overlay.conf \
+    hostapd_default.conf \
+    hostapd.accept \
+    hostapd.deny
+
+PRODUCT_PACKAGES += \
+    wcnss_service
+
 # QCOM boot
 #ifneq ($(strip $(QCPATH)),)
 #PRODUCT_BOOT_JARS += WfdCommon # Wifi display
@@ -147,7 +155,6 @@ PRODUCT_PACKAGES += \
 #PRODUCT_BOOT_JARS += qsb-port
 #PRODUCT_BOOT_JARS += oem-services # QCOM services
 #endif
-
 
 #PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
