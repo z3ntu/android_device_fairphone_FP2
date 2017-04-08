@@ -13,6 +13,17 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.power.rc \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+    ueventd.qcom.rc
+
+PRODUCT_PACKAGES += \
+    init.qcom.bt.sh
+
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     device/fairphone/fp2/audio/audio_policy.conf:system/etc/audio_policy.conf \
@@ -40,13 +51,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml
-
-# Ramdisk configurations
-PRODUCT_COPY_FILES += \
-    device/fairphone/fp2/rootdir/fstab.qcom:root/fstab.qcom \
-    device/fairphone/fp2/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc \
-    device/fairphone/fp2/rootdir/init.qcom.rc:root/init.qcom.rc \
-    device/fairphone/fp2/rootdir/init.recovery.usb.rc:root/init.recovery.usb.rc
 
 # WiFi WCNSS configurations
 PRODUCT_COPY_FILES += \
