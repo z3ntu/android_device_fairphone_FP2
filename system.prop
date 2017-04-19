@@ -1,0 +1,6 @@
+#
+# system.prop for Fairphone 2
+#
+
+# Wifi
+wifi.interface=wlan0
