@@ -114,6 +114,11 @@ PRODUCT_PACKAGES += \
 #PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 #    camera2.portability.force_api=1
 
+# Data
+PRODUCT_PACKAGES += \
+    librmnetctl \
+    rmnetcli
+
 # Media (OpenMAX)
 #PRODUCT_BOOT_JARS += \
 #    qcmediaplayer
