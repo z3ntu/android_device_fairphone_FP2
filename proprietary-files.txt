@@ -1,6 +1,20 @@
 # ADSP
 vendor/lib/libadsprpc.so
 
+# DRM
+bin/qseecomd
+#lib/libdrmdecrypt.so
+vendor/lib/libQSEEComAPI.so
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/librpmb.so
+vendor/lib/libssd.so
+#vendor/lib/libwvdrm_L3.so
+#vendor/lib/libwvm.so
+#vendor/lib/libWVStreamControlAPI_L3.so
+#vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
+
 # Misc
 vendor/lib/libNimsWrap.so
 
@@ -217,15 +231,27 @@ vendor/lib/libchromatix_skuf_ov5648_p5v23c_preview.so
 vendor/lib/libchromatix_skuf_ov5648_p5v23c_snapshot.so
 
 # Qualcomm framework
+bin/irsc_util
+-vendor/lib/libdiag.so
+vendor/lib/libdsi_netctrl.so
+-vendor/lib/libdsutils.so
+-vendor/lib/libidl.so
+-vendor/lib/libqcci_legacy.so
+vendor/lib/libqdi.so
+vendor/lib/libqdp.so
+-vendor/lib/libqmi.so
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_client_helper.so
+-vendor/lib/libqmi_client_qmux.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
+-vendor/lib/libqmiservices.so
+vendor/lib/libsmemlog.so
+vendor/lib/libsystem_health_mon.so
 
 # Sensors
 vendor/lib/libsensor1.so
 
-# Audio
-#bin/audiod
-#more
-
-# Encryption
-vendor/lib/libQSEEComAPI.so
-#bin/qseecomd
+# Wcnss (from ham) - note from z3ntu: just copied from onyx, no idea what "ham" is (either zuk_ham or lge_hammerhead)
+lib/libwcnss_qmi.so|d17b527007d5a9d468403a2bcf71f35d997d74bf
