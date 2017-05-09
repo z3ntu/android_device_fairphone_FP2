@@ -123,6 +123,9 @@ TARGET_USES_AOSP := false
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
+# RIL
+TARGET_RIL_VARIANT := caf
+
 # GPS
 TARGET_NO_RPC := true
 
