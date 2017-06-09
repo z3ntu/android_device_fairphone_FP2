@@ -126,3 +126,6 @@ persist.sys.wfd.virtual=0
 # GPS
 persist.gps.qc_nlp_in_use=0
 ro.gps.agps_provider=1
+
+# OTA
+cm.updater.uri=https://fp2.joutubes.nl/api
