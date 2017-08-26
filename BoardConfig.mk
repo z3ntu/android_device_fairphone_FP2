@@ -35,6 +35,7 @@ TARGET_KERNEL_CONFIG := fairphone-perf_defconfig
 TARGET_KERNEL_SOURCE := kernel/fairphone/msm8974
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
 
 # Architecture
@@ -126,9 +127,9 @@ USE_DEVICE_SPECIFIC_LOC_API := true
 TARGET_NO_RPC := true
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += \
-    $(DEVICE_PATH)/sepolicy
+#include device/qcom/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += \
+#    $(DEVICE_PATH)/sepolicy
 
 # CM Hardware
 BOARD_USES_CYANOGEN_HARDWARE := true
