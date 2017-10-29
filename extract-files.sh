@@ -3,7 +3,7 @@
 set -e
 
 VENDOR=fairphone
-DEVICE=fp2
+DEVICE=FP2
 
 function extract() {
     for FILE in `egrep -v '(^#|^$)' $1`; do

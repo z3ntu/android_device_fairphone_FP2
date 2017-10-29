@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VENDOR=fairphone
-DEVICE=fp2
+DEVICE=FP2
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 

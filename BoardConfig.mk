@@ -22,13 +22,13 @@
 
 -include vendor/fairphone/msm8974/BoardConfig.mk
 
-LOCAL_PATH := device/fairphone/fp2
+LOCAL_PATH := device/fairphone/FP2
 
 #TARGET_HAVE_HDMI_OUT := false
 
 # Bootloader
 TARGET_NO_BOOTLOADER := false
-TARGET_BOOTLOADER_BOARD_NAME := fp2
+TARGET_BOOTLOADER_BOARD_NAME := FP2
 
 # Platform
 #BOARD_USES_QCOM_HARDWARE := true
@@ -65,7 +65,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_SEPARATED_DT := true
-TARGET_KERNEL_SOURCE := kernel/fairphone/fp2
+TARGET_KERNEL_SOURCE := kernel/fairphone/FP2
 TARGET_KERNEL_CONFIG := fairphone_defconfig
 #TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel # fallback
 
@@ -75,7 +75,7 @@ KERNEL_TOOLCHAIN_PREFIX := arm-linux-androideabi-
 
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_fp2
+TARGET_INIT_VENDOR_LIB := libinit_FP2
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
@@ -156,7 +156,7 @@ TARGET_USES_QCA_NFC := other
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
--include vendor/fairphone/fp2/BoardConfigVendor.mk
+-include vendor/fairphone/FP2/BoardConfigVendor.mk
 
 
 # Use signed boot and recovery image
