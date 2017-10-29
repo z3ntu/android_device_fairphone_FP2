@@ -65,8 +65,8 @@ BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_SEPARATED_DT := true
-TARGET_KERNEL_SOURCE := kernel/fairphone/FP2
-TARGET_KERNEL_CONFIG := fairphone_defconfig
+TARGET_KERNEL_SOURCE := kernel/fairphone/msm8974
+TARGET_KERNEL_CONFIG := lineageos_FP2_defconfig
 #TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilts/kernel # fallback
 
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-linux-androideabi-4.9/bin
