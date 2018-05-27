@@ -144,10 +144,10 @@ TARGET_NO_RPC := true
 #BOARD_SEPOLICY_DIRS += \
 #    $(DEVICE_PATH)/sepolicy
 
-# CM Hardware
+# Lineage Hardware
 BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw
+    hardware/lineage/lineagehw
 BACKLIGHT_PATH=/sys/class/leds/lcd-backlight/brightness
 
 # QCOM Power
