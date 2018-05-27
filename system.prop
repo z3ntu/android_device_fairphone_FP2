@@ -121,3 +121,4 @@ wifi.interface=wlan0
 # Wifi Display
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
+sys.init_log_level=7
