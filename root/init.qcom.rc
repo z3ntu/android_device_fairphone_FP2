@@ -174,8 +174,8 @@ on boot
     chmod 770  /persist/sns.reg
 
     # Create QMUX deamon socket area
-    mkdir /dev/socket/qmux_radio 0770 radio radio
-    chmod 2770 /dev/socket/qmux_radio
+    mkdir /dev/socket/qmux_radio 0777 radio radio
+    chmod 2777 /dev/socket/qmux_radio
     mkdir /dev/socket/qmux_audio 0770 media audio
     chmod 2770 /dev/socket/qmux_audio
     mkdir /dev/socket/qmux_bluetooth 0770 bluetooth bluetooth
