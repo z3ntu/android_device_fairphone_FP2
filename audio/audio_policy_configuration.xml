@@ -16,9 +16,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<!-- TODO AUDIO_DEVICE_OUT_ANLG_DOCK_HEADSET AUDIO_DEVICE_OUT_FM_TX -->
+
 <audioPolicyConfiguration version="1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
     <!-- version section contains a “version” tag in the form “major.minor” e.g version=”1.0” -->
+
+    <!-- Global configuration Decalaration -->
+    <globalConfiguration speaker_drc_enabled="true"/>
+
 
     <!-- Modules section:
         There is one section per audio HW module present on the platform.
@@ -58,8 +62,8 @@
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
-                <mixPort name="low_latency" role="source"
-                        flags="AUDIO_OUTPUT_FLAG_FAST">
+                <mixPort name="deep_buffer" role="source"
+                        flags="AUDIO_OUTPUT_FLAG_DEEP_BUFFER">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="44100,48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
@@ -125,6 +129,10 @@
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,16000" channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
                 </devicePort>
+                <devicePort tagName="Telephony Tx" type="AUDIO_DEVICE_OUT_TELEPHONY_TX" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="8000,16000" channelMasks="AUDIO_CHANNEL_OUT_MONO,AUDIO_CHANNEL_OUT_STEREO"/>
+                </devicePort>
                 <devicePort tagName="HDMI" type="AUDIO_DEVICE_OUT_AUX_DIGITAL" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,128000,176400,192000" channelMasks="dynamic"/>
@@ -143,6 +151,11 @@
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO,AUDIO_CHANNEL_IN_FRONT_BACK"/>
                 </devicePort>
+                <devicePort tagName="FM Tuner" type="AUDIO_DEVICE_IN_FM_TUNER" role="source">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="48000"
+                             channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO"/>
+                </devicePort>
                 <devicePort tagName="Wired Headset Mic" type="AUDIO_DEVICE_IN_WIRED_HEADSET" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
@@ -151,6 +164,10 @@
                 <devicePort tagName="BT SCO Headset Mic" type="AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,16000" channelMasks="AUDIO_CHANNEL_IN_MONO"/>
+                </devicePort>
+                <devicePort tagName="Telephony Rx" type="AUDIO_DEVICE_IN_TELEPHONY_RX" role="source">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="8000,16000,48000" channelMasks="AUDIO_CHANNEL_IN_MONO"/>
                 </devicePort>
             </devicePorts>
             <!-- route declaration, i.e. list all available sources for a given sink -->
